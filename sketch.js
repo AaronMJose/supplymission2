@@ -62,7 +62,12 @@ function draw() {
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
 	
-
+ if(keyDown(LEFT_ARROW)){
+	 helicopterSprite.x = helicopterSprite.x-10;
+ }
+ if(keyDown(RIGHT_ARROW)){
+	helicopterSprite.x = helicopterSprite.x+10;
+}
 	
   keyPressed();
   drawSprites();
