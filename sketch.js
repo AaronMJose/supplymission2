@@ -62,12 +62,7 @@ function draw() {
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
 	
- if(keyDown(LEFT_ARROW)){
-	 helicopterSprite.x = helicopterSprite.x-10;
- }
- if(keyDown(RIGHT_ARROW)){
-	helicopterSprite.x = helicopterSprite.x+10;
-}
+ 
 	
   keyPressed();
   drawSprites();
@@ -79,6 +74,17 @@ function keyPressed() {
     // Look at the hints in the document and understand how to make the package body fall only on
    Matter.Body.setStatic (packageBody,false);
   }
+	if(keyCode===LEFT_ARROW){
+	 helicopterSprite.x = helicopterSprite.x-10;
+		trans_opts1={x:-10,y:0}
+		Matter.Body.translate(packageBody,trans_opts1);
+ }
+       	if(keyCode===RIGHT_ARROW){
+	helicopterSprite.x = helicopterSprite.x+10;
+		trans_opts2={x:10,y:0}
+		Matter.Body.translate(packageBody,trans_opts2);
+}
+	
 }
 
 
